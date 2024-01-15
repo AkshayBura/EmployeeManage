@@ -1,0 +1,93 @@
+@MyApp.API_HostAddress = http://localhost:5115
+
+GET {{MyApp.API_HostAddress}}/api/user
+Accept: application/json
+
+###
+
+
+POST {{MyApp.API_HostAddress}}/api/user
+Content-Type: application/json
+
+{
+  "FirstName": "ABC",
+  "LastName": "D",
+  "EmailAddress": "abc@org.in",
+  "MobileNumber": 7686584686,
+  "Password": "Abcd@123"
+}
+
+###
+
+POST {{MyApp.API_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "EmailAddress": "abc@org.in",
+  "Password": "Abcd@123"
+}
+
+###
+
+GET {{MyApp.API_HostAddress}}/api/personaldetails
+
+###
+
+POST {{MyApp.API_HostAddress}}/api/personaldetails
+Content-Type: application/json
+
+{
+  "UserId": "cdff65e1-b7a3-4039-a42f-08dc159a44f8",
+  "Address": "EFG",
+  "DOB": "2000-10-28",
+  "AadhaarNumber": "546445614565",
+  "DegreeId": 2,
+  "StatusId": 1
+}
+
+###
+
+PUT {{MyApp.API_HostAddress}}/api/personaldetails/{a148bc05-2970-4326-be33-08dc159a541a}
+Content-Type: application/json
+
+{
+  "UserId": "cdff65e1-b7a3-4039-a42f-08dc159a44f8",
+  "Address": "ABC",
+  "DOB": "2000-10-28",
+  "AadhaarNumber": "123545614565",
+  "DegreeId": 4,
+  "StatusId": 1
+}
+
+###
+
+GET {{MyApp.API_HostAddress}}/api/employmentdetails
+
+###
+
+POST {{MyApp.API_HostAddress}}/api/employmentdetails
+Content-Type: application/json
+
+{
+  "CompanyName": "Microsoft",
+  "JobRole": "SDE",
+  "DomainId": "1",
+  "SkillsDeveloped": ".Net",
+  "JoiningDate": "2020-10-28",
+  "TerminationDate": "2022-10-28",
+  "UserId": "cdff65e1-b7a3-4039-a42f-08dc159a44f8"
+}
+
+###
+
+GET {{MyApp.API_HostAddress}}/api/employmentdetails/GetByUserId/{cdff65e1-b7a3-4039-a42f-08dc159a44f8}
+
+###
+
+GET {{MyApp.API_HostAddress}}/api/personaldetails/GetByUserId/{cdff65e1-b7a3-4039-a42f-08dc159a44f8}
+
+###
+
+DELETE {{MyApp.API_HostAddress}}/api/personaldetails/{d6e0a544-26e5-41f8-493f-08dc159cf475}
+
+###
